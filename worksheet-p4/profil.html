@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal dan Target Olahraga Saya</title>
+    <link rel="icon" href="gym.webp" type="image/webp">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Jadwal dan Target Olahraga Saya</h1>
+
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="#jadwal">Jadwal Latihan</a></li>
+                <li><a href="#target">Target Saya</a></li>
+                <li><a href="#catat">Catat Latihan</a></li>
+            </ul>
+        </nav>
+
+        <div class="kontrol-tema">
+            <input type="checkbox" id="tema" class="pengalih-tema">
+            <label for="tema" class="tombol-tema">Tema gelap</label>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="jadwal">
+            <h2>Jadwal Latihan</h2>
+
+            <div class="katalog" aria-label="Daftar jadwal latihan">
+                <article class="kartu">
+                    <h3>Senin</h3>
+                    <p>Push Workout</p>
+                    <p>Durasi: 60 menit</p>
+                </article>
+
+                <article class="kartu">
+                    <h3>Selasa</h3>
+                    <p>Pull Workout</p>
+                    <p>Durasi: 60 menit</p>
+                </article>
+
+                <article class="kartu">
+                    <h3>Rabu</h3>
+                    <p>Leg Workout</p>
+                    <p>Durasi: 60 menit</p>
+                </article>
+
+                <article class="kartu">
+                    <h3>Kamis</h3>
+                    <p>Push Workout</p>
+                    <p>Durasi: 60 menit</p>
+                </article>
+            </div>
+
+            <figure>
+                <img
+                    src="gym.webp"
+                    alt="Suasana latihan olahraga di gym"
+                    width="640"
+                    height="360"
+                    loading="lazy"
+                >
+                <figcaption>Latihan olahraga di gym.</figcaption>
+            </figure>
+        </section>
+
+
+        <section id="target">
+            <h2>Target Saya</h2>
+
+            <p>
+                Target saya adalah meningkatkan kekuatan, membangun massa otot,
+                dan menjaga konsistensi latihan setiap minggu.
+            </p>
+
+            <h3 id="catat">Catat Latihan</h3>
+
+            <form action="/simpan" method="post">
+
+                <p class="form-kolom">
+                    <label for="jenis-latihan">Jenis Latihan</label>
+                    <input
+                        type="text"
+                        id="jenis-latihan"
+                        name="jenis-latihan"
+                        aria-describedby="jenis-latihan-error"
+                        required
+                    >
+                    <span class="pesan-galat" id="jenis-latihan-error">Isi jenis latihan.</span>
+                </p>
+
+                <p class="form-kolom">
+                    <label for="tanggal">Tanggal</label>
+                    <input
+                        type="date"
+                        id="tanggal"
+                        name="tanggal"
+                        aria-describedby="tanggal-error"
+                        required
+                    >
+                    <span class="pesan-galat" id="tanggal-error">Pilih tanggal latihan.</span>
+                </p>
+
+                <p class="form-kolom">
+                    <label for="durasi">Durasi (menit)</label>
+                    <input
+                        type="number"
+                        id="durasi"
+                        name="durasi"
+                        min="1"
+                        max="300"
+                        aria-describedby="durasi-error"
+                        required
+                    >
+                    <span class="pesan-galat" id="durasi-error">Masukkan durasi 1 sampai 300 menit.</span>
+                </p>
+
+                <button type="submit">Simpan</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Mizan Mulya El Shirazy · 25523195 · 2026</p>
+    </footer>
+
+</body>
+</html>

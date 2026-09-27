@@ -1,0 +1,41 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --color-bg: #171b19;
+        --color-fg: #eef2eb;
+        --color-surface: #222925;
+        --color-surface-muted: #2c3530;
+        --color-border: #66756d;
+        --color-primary: #52b89d;
+        --color-primary-strong: #91dbc3;
+        --color-primary-contrast: #10221d;
+        --color-danger: #f08a78;
+        --color-focus: #7C3AED;
+        --color-text-muted: #b8c1b9;
+        --color-accent: #f0ad55;
+    }
+}
+
+:root:has(#tema:checked) {
+    color-scheme: dark;
+    --color-bg: #171b19;
+    --color-fg: #eef2eb;
+    --color-surface: #222925;
+    --color-surface-muted: #2c3530;
+    --color-border: #66756d;
+    --color-primary: #7C3AED;
+    --color-primary-strong: #91dbc3;
+    --color-primary-contrast: #10221d;
+    --color-danger: #f08a78;
+    --color-focus: #7C3AED;
+    --color-text-muted: #b8c1b9;
+    --color-accent: #f0ad55;
+}
+
+:root:has(#tema:checked) .tombol-tema {
+    color: var(--color-primary-contrast);
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+    }
+}
