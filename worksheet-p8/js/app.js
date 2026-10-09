@@ -61,3 +61,7 @@ const judulProyek = daftarProyek.map(
     (proyek) => proyek.judul
 );
 console.table(judulProyek);
+const proyekTerurut = [...daftarProyek].sort((a, b) => a.tahun - b.tahun);
+
+console.table(proyekTerurut);
+console.table(daftarProyek);
