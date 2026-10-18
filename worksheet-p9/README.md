@@ -12,33 +12,33 @@ Topik halaman saya: jadwal dan target olahraga saya.
 - Kolom form: Jenis Latihan, Tanggal, Durasi
 - Gambar: gym.webp
 
-### Riwayat commit Pertemuan 3
+### Riwayat Commit Pertemuan 3
 
 | Lembar | Tahap | Pesan commit yang disarankan |
 |---|---|---|
 | A | Rencana halaman di README | Pertemuan 3: rencana halaman profil di README |
-| B | Kerangka dokumen dan bagian head | Pertemuan 3: kerangka dokumen dan bagian head |
+| B | Kerangka dokumen dan head | Pertemuan 3: kerangka dokumen dan bagian head |
 | C | Struktur semantik | Pertemuan 3: struktur semantik header nav main footer |
-| D | Tabel dan gambar | Pertemuan 3: tabel data dan gambar dengan teks alternatif |
+| D | Tabel dan gambar | Pertemuan 3: tabel data dan gambar dengan alt text |
 | E | Form dan validasi | Pertemuan 3: form dengan label dan validasi |
 | F | Pemeriksaan dan perbaikan | Pertemuan 3: perbaikan hasil pemeriksaan |
 | G | Penyelesaian halaman | Pertemuan 3: halaman profil selesai |
 
-Lembar kerja Pertemuan 3 menyediakan titik simpan Git setelah setiap Lembar A sampai G. Tabel di atas mencatat pesan commit yang disarankan oleh lembar kerja.
+Worksheet Pertemuan 3 menyediakan titik simpan Git setelah setiap Lembar A sampai G. Tabel di atas mencatat pesan commit yang disarankan oleh worksheet.
 
-## Pertemuan 4 — Token desain halaman profil
+## Pertemuan 4 — Design token halaman profil
 
-Tujuan P4 adalah menerapkan dasar-dasar CSS dan token desain pada halaman profil P3 tanpa mengubah isi dan tujuan halaman olahraga yang sudah dibuat.
+Tujuan P4 adalah menerapkan CSS Fundamental dan Design Token pada halaman profil P3 tanpa mengubah isi dan tujuan halaman olahraga yang sudah dibuat.
 
-Implementasi P4 menggunakan lima berkas CSS berikut:
+Implementasi P4 menggunakan lima file CSS berikut:
 
-- `tokens.css` — token desain primitif dan semantik.
-- `base.css` — reset global, tipografi, gambar, dan indikator fokus.
-- `layout.css` — bilah navigasi, susunan halaman, katalog kartu, dan footer.
-- `komponen.css` — kartu, gambar, form, tombol, keadaan tidak valid, dan kontrol tema.
-- `tema.css` — tema gelap otomatis dan penimpaan manual berbasis `:has()`.
+- `tokens.css` — primitive dan semantic design token.
+- `base.css` — reset global, tipografi, gambar, dan focus indicator.
+- `layout.css` — navbar, susunan halaman, katalog kartu, dan footer.
+- `komponen.css` — kartu, gambar, form, tombol, invalid state, dan kontrol tema.
+- `tema.css` — tema gelap otomatis dan override manual berbasis `:has()`.
 
-Warna utama yang dipilih adalah hijau `--color-primary` karena sesuai dengan konteks olahraga dan memberi aksen yang jelas untuk navigasi, judul kartu, tombol, serta fokus. Token semantik digunakan agar perubahan satu nilai dapat diterapkan secara konsisten.
+Warna utama yang dipilih adalah hijau `--color-primary` karena sesuai dengan konteks olahraga dan memberi aksen yang jelas untuk navigasi, judul kartu, tombol, serta fokus. Semantic token digunakan agar perubahan satu nilai dapat diterapkan secara konsisten.
 
 | Token | Nilai | Untuk apa |
 | --- | --- | --- |
@@ -50,305 +50,168 @@ Warna utama yang dipilih adalah hijau `--color-primary` karena sesuai dengan kon
 | `--radius-full` | `999rem` | Bentuk pil pada kontrol tema |
 | `--text-sm` | `0.875rem` | Ukuran teks label dan pesan |
 | `--text-md` | `1rem` | Ukuran teks utama |
-| `--text-xl` | `2rem` | Ukuran judul tingkat dua dan judul kecil |
-| `--text-3xl` | `3.5rem` | Ukuran judul utama |
-| `--radius-md` | `0.75rem` | Lengkungan sudut kartu dan kontrol |
+| `--text-xl` | `2rem` | Ukuran heading tingkat dua dan judul kecil |
+| `--text-3xl` | `3.5rem` | Ukuran heading utama |
+| `--radius-md` | `0.75rem` | Radius kartu dan kontrol |
 | `--shadow-1` | `0 0.25rem 1rem rgb(37 37 31 / 0.08)` | Bayangan kartu |
 | `--color-bg` | `#f4f1ea` | Latar belakang halaman |
 | `--color-fg` | `#25251f` | Warna teks utama |
 | `--color-surface` | `#fffdf8` | Latar kartu dan kontrol form |
 | `--color-border` | `#d7d1c3` | Garis batas komponen |
-| `--color-primary` | `#176b5b` | Aksen utama, tautan, judul, dan tombol |
+| `--color-primary` | `#176b5b` | Aksen utama, link, judul, dan tombol |
 | `--color-danger` | `#a93d2f` | Penanda input yang tidak valid |
 | `--color-focus` | `#c85b28` | Indikator fokus keyboard |
 
-Kriteria audit satu baris: perubahan pada `--color-primary` di lapisan semantik harus berdampak pada tautan navigasi, judul/aksen kartu, tombol, dan elemen lain yang memakai token utama. Tema gelap mengganti lapisan semantik yang sama tanpa mengubah token primitif.
+Kriteria audit satu baris: perubahan pada `--color-primary` di lapis semantic harus berdampak pada link navigasi, judul/aksen kartu, tombol, dan elemen lain yang memakai token utama. Tema gelap mengganti lapis semantic yang sama tanpa mengubah primitive token.
 
 Tema manual dibuat dengan checkbox, label, dan selector `:has()` tanpa JavaScript atau penyimpanan browser.
 
-### Riwayat commit Pertemuan 4
+### Riwayat Commit Pertemuan 4
 
 | Lembar | Tahap | Pesan commit yang disarankan |
 |---|---|---|
-| A | Rencana token desain di README | Pertemuan 4: rencana token desain di README |
+| A | Rencana design token di README | Pertemuan 4: rencana design token di README |
 | B | tokens.css dan pemuatan berkas gaya | Pertemuan 4: tokens.css dan pemuatan berkas gaya |
-| C | base.css, reset, dan tipografi | Pertemuan 4: base.css reset dan tipografi |
-| D | layout.css, bilah navigasi, dan katalog kartu | Pertemuan 4: layout.css bilah navigasi dan katalog kartu |
+| C | base.css reset dan tipografi | Pertemuan 4: base.css reset dan tipografi |
+| D | layout.css navbar dan katalog kartu | Pertemuan 4: layout.css navbar dan katalog kartu |
 | E | Gaya form dan keadaan fokus | Pertemuan 4: gaya form dan keadaan fokus |
 | F | Tema gelap dan tombol pengalih | Pertemuan 4: tema gelap dan tombol pengalih |
 | G | Tampilan halaman profil selesai | Pertemuan 4: tampilan halaman profil selesai |
 
-Lembar kerja Pertemuan 4 menyediakan titik simpan Git setelah setiap Lembar A sampai G. Tabel di atas mencatat pesan commit yang disarankan oleh lembar kerja.
+Worksheet Pertemuan 4 menyediakan titik simpan Git setelah setiap Lembar A sampai G. Tabel di atas mencatat pesan commit yang disarankan oleh worksheet.
 
 ## Catatan penggunaan AI
 
-Dalam pengerjaan tugas ini, saya menggunakan ChatGPT sebagai pendamping selama proses pengembangan. AI membantu memberikan penjelasan konsep, memberikan contoh kode, membantu penelusuran galat, serta memberikan panduan penggunaan Git dan GitHub. Proses implementasi, pengujian, dan pengelolaan proyek dilakukan oleh saya sendiri dengan mengikuti arahan dan memahami langkah-langkah yang diberikan.
-
-## Pertemuan 9 — P9: DOM, Event, dan Interaktivitas
+Dalam pengerjaan tugas ini, saya menggunakan ChatGPT sebagai pendamping selama proses pengembangan. AI membantu memberikan penjelasan konsep, memberikan contoh kode, membantu debugging, serta memberikan panduan penggunaan Git dan GitHub. Proses implementasi, pengujian, dan pengelolaan project dilakukan oleh saya sendiri dengan mengikuti arahan dan memahami langkah-langkah yang diberikan.
 
-### Gambaran umum
+## Pertemuan 8 — JavaScript Modern ES6+, Struktur Data, dan Array Methods
 
-P9 melatih pemilihan elemen HTML menggunakan Document Object Model (DOM), pembuatan konten halaman dari data JavaScript, dan respons terhadap tindakan pengguna melalui event listener. Folder ini mengembangkan halaman profil dan data proyek JavaScript dari pertemuan sebelumnya, termasuk modul JavaScript dan penggunaan metode array yang didokumentasikan pada Pertemuan 8.
+### A. Setup dan integrasi JavaScript
 
-Implementasi yang diperiksa mencakup:
+File `js/app.js` dibuat untuk menuliskan dan menjalankan latihan JavaScript. File tersebut dihubungkan ke `profil.html` menggunakan `<script type="module" src="js/app.js"></script>`. Proyek dijalankan melalui local server agar halaman dan modul JavaScript dapat dibuka dari browser.
 
-- Daftar proyek yang ditampilkan dari array `daftarProyek`.
-- Filter kategori untuk semua proyek, proyek web, proyek aplikasi, dan kategori lainnya.
-- Pesan keadaan kosong ketika tidak ada proyek yang cocok dengan kategori terpilih.
-- Validasi di sisi klien untuk jenis latihan, tanggal, dan durasi pada form latihan.
-- Jadwal, target, gambar, dan kontrol tema berbasis CSS yang sudah ada pada halaman profil.
+### B. JavaScript Modern ES6+
 
-Form latihan saat ini memvalidasi input dan mencegah perilaku submit bawaan browser. JavaScript yang diperiksa tidak menyimpan data form ke server atau penyimpanan browser.
+Latihan menggunakan `const` untuk nilai yang tidak perlu di-assign ulang dan `let` untuk nilai yang perlu diubah. Template literals (`` `${...}` ``) digunakan untuk menyusun kalimat profil dengan menyisipkan nilai variabel. Nullish coalescing (`??`) menyediakan nilai pengganti saat nilai di sisi kiri `null` atau `undefined`, sedangkan optional chaining (`?.`) membantu mengakses properti berantai dengan aman ketika nilai perantaranya mungkin tidak tersedia.
 
-### Struktur proyek
+Data profil dikelola melalui variabel JavaScript, termasuk nama, peran, keahlian, dan jumlah proyek. Nilai-nilai tersebut digunakan untuk membentuk kalimat profil dan data objek `profil`.
 
-```text
-worksheet-p9/
-├── README.md
-├── profil.html
-├── tokens.css
-├── base.css
-├── layout.css
-├── komponen.css
-├── tema.css
-├── gym.webp
-└── js/
-    ├── app.js
-    └── dom.js
-```
+### C. Pure Functions
 
-| Berkas | Fungsi |
-| --- | --- |
-| `profil.html` | Markup halaman profil, kontrol filter proyek, elemen daftar proyek dan keadaan kosong, form latihan, serta referensi skrip modul. |
-| `tokens.css` | Properti kustom CSS untuk jarak, tipografi, warna, dan nilai desain lainnya. |
-| `base.css` | Gaya dasar halaman, tipografi, gambar, kontrol form, dan fokus. |
-| `layout.css` | Aturan tata letak halaman, navigasi, bagian, dan katalog. |
-| `komponen.css` | Gaya komponen form, tombol, pesan galat, gambar berteks, dan kontrol tema. |
-| `tema.css` | Aturan skema warna gelap dan penimpaan tema manual melalui checkbox. |
-| `gym.webp` | Gambar pada bagian jadwal latihan dan ikon halaman. |
-| `js/app.js` | Data profil dan array `daftarProyek` yang diekspor. Berkas ini juga mencatat contoh operasi array di Console browser. |
-| `js/dom.js` | Mengimpor data proyek, merender kartu proyek, menangani klik filter kategori, dan memvalidasi form latihan. |
+Fungsi `buatPerkenalan()` menerima data nama dan peran lalu menghasilkan teks perkenalan. Fungsi `formatKeahlian()` menerima daftar keahlian dan menghasilkan teks yang diformat. Keduanya menghasilkan output berdasarkan input yang diberikan, sehingga hasilnya dapat digunakan tanpa mengubah data masukan.
 
-### Lembar A — Memilih elemen DOM
+### D. Struktur Data dan Array Methods
 
-`document.querySelector(selector)` mengembalikan elemen pertama yang cocok dengan selector CSS, atau `null` jika tidak ada elemen yang cocok. Selector harus sesuai dengan elemen di HTML. Contohnya, `#list` memilih elemen dengan `id` bernilai `list`; ID yang keliru akan menghasilkan `null`. JavaScript saat ini mengharapkan selector-nya cocok dengan markup halaman, sehingga elemen yang tidak ditemukan dapat menyebabkan operasi berikutnya gagal.
+Data profil disusun dalam objek `profil`, sedangkan proyek disimpan sebagai array objek `daftarProyek`. `console.table()` digunakan untuk melihat data keahlian, daftar proyek, hasil pemfilteran, dan judul proyek dalam bentuk tabel di Console.
 
-Selector yang digunakan di `js/dom.js` antara lain:
+- `filter()` memilih proyek yang memenuhi kondisi, seperti proyek yang sudah selesai.
+- `find()` mencari satu proyek berdasarkan judul.
+- `map()` membentuk array baru yang berisi judul proyek.
+- Spread operator (`...`) menyalin `daftarProyek` sebelum `sort()` digunakan. Pengurutan dilakukan pada salinan `proyekTerurut`, sehingga array aslinya tidak langsung dimodifikasi.
 
-```js
-document.querySelector("#list");
-document.querySelector("#empty");
-document.querySelector("#filter");
-document.querySelector("form");
-document.querySelector("#jenis-latihan");
-document.querySelector("#tanggal");
-document.querySelector("#durasi");
-form.querySelector('button[type="submit"]');
-```
+### E. Debugging dan penanganan error
 
-Untuk setiap kolom form, kode juga memilih pesan galat terkait menggunakan ID kolom tersebut, misalnya `#jenis-latihan-error`.
+Selama pengerjaan, debugging mencakup pemeriksaan kesalahan path file serta variabel `nama` yang belum terdefinisi. Error diperiksa melalui Console browser. Kendala Live Server juga tercatat dalam pengerjaan. Catatan yang tersedia tidak memastikan bahwa seluruh kendala tersebut telah diperbaiki, sehingga penyelesaiannya tidak dinyatakan di sini.
 
-Untuk memeriksa selector pada halaman yang sudah dimuat, buka Chrome DevTools, pilih **Console**, lalu jalankan selector tersebut. Contoh:
+### F. Checklist, refleksi, dan evaluasi
 
-```js
-document.querySelector("#list")
-document.querySelector("#jenis-latihan-error")
-```
+Checklist worksheet:
 
-Console seharusnya menampilkan elemen yang cocok, bukan `null`. Pastikan elemen yang ditampilkan memang elemen yang dimaksud.
+- [x] Mempraktikkan `map()`, `filter()`, dan `find()`.
+- [x] Memeriksa output/error melalui Console dan mencatat bukti Console pada worksheet; lokasi bukti tidak dirinci di README ini.
+- [x] Mencantumkan deklarasi penggunaan AI; rincian pembagian bantuan dan pekerjaan mandiri perlu dilengkapi pada deklarasi di bawah.
+- [x] Mencatat lebih dari satu referensi commit: `a91a774` dan `8a60d24`. Isi commit tidak dirinci.
 
-### Lembar B — Merender proyek dari data
+**Refleksi:** Debugging JavaScript, terutama menemukan masalah path file dan variabel yang belum terdefinisi, menjadi bagian yang menantang. Target pembelajaran berikutnya adalah DOM dan event handling.
 
-`js/app.js` mengekspor `daftarProyek`, yaitu array yang berisi sejumlah objek. Isinya saat ini:
+**Penilaian mandiri: 80/100**
 
-| Judul proyek | Tahun | Selesai | Kategori |
-| --- | ---: | --- | --- |
-| Health Web | 2026 | Tidak | `web` |
-| Aplikasi Pengelolaan Sampah | 2026 | Tidak | `aplikasi` |
-| Jadwal dan Target Olahraga | 2026 | Ya | `aplikasi` |
+| Aspek | Nilai |
+|---|---:|
+| Syntax dan types | 12/15 |
+| Pure functions | 20/25 |
+| Array methods | 20/25 |
+| Error handling dan Console | 18/20 |
+| Code cleanliness, penggunaan AI, dan commits | 10/15 |
+| **Total** | **80/100** |
 
-Setiap objek memiliki properti `judul`, `tahun`, `selesai`, dan `category`. `js/dom.js` mengimpor array tersebut dan menggunakannya sebagai sumber daftar proyek yang dirender.
+### Deklarasi penggunaan AI — Pertemuan 8
 
-`buildCard(proyek)` membuat satu item daftar. Fungsi ini menetapkan class `card` dan mengisi item dengan judul proyek melalui `textContent`:
+Rincian bagian P8 yang dibantu AI dan bagian yang dikerjakan atau diverifikasi sendiri oleh mahasiswa belum dapat dipastikan dari informasi yang tersedia. Lengkapi deklarasi ini dengan menyebutkan bantuan AI yang benar-benar digunakan serta pekerjaan dan pemeriksaan yang dilakukan sendiri; tidak ada pembagian spesifik yang diklaim di sini.
 
-```js
-function buildCard(proyek) {
-    const li = document.createElement("li");
-    li.className = "card";
-    li.textContent = proyek.judul;
-    return li;
-}
-```
+## Pertemuan 9 — DOM, Events, and Interactivity
 
-`render(daftar)` membuat satu item daftar untuk setiap objek data dan menambahkan setiap item ke elemen `#list`. Dengan demikian, kartu proyek dibuat dari array, bukan ditulis satu per satu di HTML.
+### A. Selecting Elements and DOM Setup
 
-`createElement()` membuat elemen HTML, `className` menetapkan class-nya, `textContent` mengisi teks biasa, dan `append()` menambahkan item baru ke elemen induknya. `textContent` memperlakukan judul sebagai teks, bukan menguraikannya sebagai HTML. Jangan memasukkan konten dari pengguna menggunakan `innerHTML`; menafsirkan input sembarang sebagai markup dapat menimbulkan risiko cross-site scripting (XSS).
+Pekerjaan Meeting 8 disalin ke folder `worksheet-p9/` sebagai dasar halaman profil dan data proyek. File `js/dom.js` ditambahkan untuk manipulasi DOM dan interaksi halaman. `profil.html` memuat `js/app.js` lebih dahulu, lalu `js/dom.js`, keduanya menggunakan `<script type="module">` sebelum penutup `</body>`. Nama file HTML di repository adalah `profil.html` (bukan `profile.html`).
 
-### Lembar C — Event delegation dan filter kategori
+`document.querySelector()` mengambil satu elemen, seperti `#list`, `#empty`, dan `#filter`. Untuk mengambil beberapa elemen digunakan `document.querySelectorAll()`, yang menghasilkan NodeList; NodeList dapat diubah menjadi array menggunakan `Array.from()` jika perlu memakai metode array seperti `map()` atau `filter()`. Penggunaan `Array.from()` dan `querySelectorAll()` dicatat sebagai konsep, bukan sebagai implementasi yang ditemukan di `js/dom.js`.
 
-Tombol filter berada di dalam elemen `#filter`. `js/dom.js` memasang satu listener klik pada elemen induk tersebut, bukan memasang listener terpisah pada setiap tombol:
+Selector diperiksa dengan mencocokkan ID pada HTML dan pemanggilannya di JavaScript. Chrome DevTools dan Console dapat digunakan untuk memastikan selector tidak menghasilkan `null`; hasil uji runtime tidak dicatat di bagian ini.
 
-```js
-filterRow.addEventListener("click", (event) => {
-    const button = event.target.closest("button");
-    if (!button) return;
+### B. Rendering Project List from Data
 
-    const category = button.dataset.category;
-    const selected = daftarProyek.filter(
-        (proyek) => category === "all" || proyek.category === category
-    );
+Daftar proyek diambil dari `daftarProyek` yang diekspor oleh `js/app.js`, bukan ditulis sebagai kartu proyek manual di HTML. Fungsi `buildCard()` membuat elemen `li` dengan `document.createElement()`, mengisi teks judul melalui `textContent`, lalu fungsi `render()` menambahkan kartu ke container menggunakan `append()`. Sebelum merender ulang, container dikosongkan dengan `container.textContent = ""`.
 
-    render(selected);
-});
-```
+Implementasi tidak menggunakan `DocumentFragment`. `innerHTML` juga tidak digunakan untuk memasukkan konten proyek; `createElement()` dan `textContent` menghindari interpretasi teks data sebagai markup, yang penting terutama untuk konten yang tidak tepercaya dan risiko XSS.
 
-`event.target` adalah elemen yang diklik, sedangkan `closest("button")` mencari tombol terdekat yang memuat elemen tersebut. Pemeriksaan awal mengabaikan klik yang bukan berasal dari tombol. `dataset.category` membaca atribut `data-category` pada tombol. Metode array `filter()` memilih proyek dengan `category` yang cocok dengan nilai terpilih; `all` memilih semua proyek.
+### C. Event Delegation and Filter Buttons
 
-HTML saat ini menyediakan kategori `all`, `web`, `aplikasi`, dan `lainnya`. Belum ada proyek berkategori `lainnya` dalam `daftarProyek`, sehingga pemilihan kategori itu menampilkan keadaan kosong. Kode yang diperiksa tidak menambahkan gaya atau status terpilih/aktif pada tombol filter.
+Satu listener `click` dipasang pada parent `#filter` untuk menangani tombol kategori melalui event delegation. `event.target.closest("button")` mencari tombol yang diklik dan `button.dataset.category` mengambil kategorinya. Daftar proyek disaring dengan `filter()`, lalu hasilnya diberikan ke fungsi render.
 
-### Lembar D — Rendering dan keadaan kosong
+Listener dipasang sekali saat modul dijalankan, bukan setiap kali kartu dirender. Kode yang tersedia tidak menunjukkan penggunaan `classList.toggle()` atau class CSS `active`, sehingga penandaan visual tombol filter aktif tidak dinyatakan telah diterapkan. Daftar kosong ditangani dengan menampilkan elemen `#empty`; setelah ada hasil, pesan tersebut disembunyikan.
 
-`render()` terlebih dahulu mengosongkan daftar agar hasil render baru menggantikan hasil sebelumnya, bukan menggandakannya. Setelah itu, fungsi memeriksa apakah array terpilih kosong. Jika kosong, fungsi menampilkan `#empty` lalu berhenti tanpa membuat kartu. Jika tidak, pesan disembunyikan dan sebuah kartu ditambahkan untuk setiap proyek:
+### D. Render Function and Form Validation
 
-```js
-function render(daftar) {
-    container.textContent = "";
+Fungsi `render(daftar)` menyatukan pembaruan daftar proyek: container dikosongkan, kondisi tanpa data diperiksa, lalu kartu ditambahkan jika ada hasil. Validasi form mencegah submit memuat ulang halaman dengan `event.preventDefault()`. Nilai input diperiksa menggunakan `value.trim()` agar input kosong atau hanya berisi spasi tidak dianggap valid. Durasi juga dibatasi pada nilai 1 sampai 300.
 
-    if (daftar.length === 0) {
-        empty.hidden = false;
-        return;
-    }
+Pesan error tersedia untuk masing-masing field dan ditampilkan atau disembunyikan melalui atribut `hidden`. Input tidak valid diberi `aria-invalid="true"`; atribut itu dihapus saat valid. Tombol submit dinonaktifkan sampai semua field valid, dan saat submit gagal, fokus diarahkan ke field tidak valid pertama menggunakan `focus()`.
 
-    empty.hidden = true;
+### E. Debugging and Error Handling
 
-    daftar.forEach((proyek) => {
-        container.append(buildCard(proyek));
-    });
-}
-```
+Pemeriksaan debugging mencakup selector yang dapat menghasilkan `null`, urutan pemuatan script dan path `js/dom.js`, serta kemungkinan listener terpasang lebih dari sekali. Daftar tanpa hasil diperiksa untuk memastikan empty state muncul. Filter dan validasi form diperiksa melalui Console dan DevTools.
 
-Teks pesan di `profil.html` adalah “Tidak ada proyek pada kategori ini.” Pemanggilan awal `render(daftarProyek)` menampilkan semua proyek. Listener klik filter dipasang di luar `render()`, sehingga proses render ulang tidak memasang salinan listener tambahan.
+Kendala yang dicatat pada worksheet adalah pesan error form tidak selalu muncul secara konsisten saat form dikirim. Tindakan yang dilakukan adalah menambahkan atribut `hidden` pada elemen pesan error dan memeriksa kembali logika validasi. Implementasi saat ini mengubah `error.hidden` ketika field divalidasi, tetapi catatan yang tersedia tidak memastikan bahwa masalah konsistensi tersebut telah sepenuhnya terselesaikan.
 
-### Lembar D — Validasi form latihan
+### F. Checklist, Reflection, and Self-Assessment
 
-Form memiliki tiga kolom dan masing-masing mempunyai pesan tersendiri:
+**Checklist berdasarkan berkas yang tersedia**
 
-| Kolom | Selector | Aturan JavaScript | Teks pesan di halaman |
-| --- | --- | --- | --- |
-| Jenis latihan | `#jenis-latihan` | Nilai tidak boleh kosong setelah `trim()`. | “Isi jenis latihan.” |
-| Tanggal | `#tanggal` | Nilai tanggal tidak boleh kosong. | “Pilih tanggal latihan.” |
-| Durasi | `#durasi` | Nilai tidak boleh kosong dan harus bernilai angka 1 sampai 300, termasuk batasnya. | “Masukkan durasi 1 sampai 300 menit.” |
+- [x] HTML `profil.html`, file CSS, `js/app.js`, dan `js/dom.js` tersedia di repository. Nama HTML yang tersedia adalah `profil.html`.
+- [x] Selector pada `js/dom.js` cocok dengan elemen yang didefinisikan di `profil.html`; keberhasilan runtime tidak dicatat.
+- [x] Project list dirender dari data JavaScript dengan `createElement()` dan `textContent`.
+- [x] Container dibersihkan sebelum rendering ulang.
+- [x] Satu listener parent menangani klik tombol filter.
+- [x] Empty state ditampilkan ketika tidak ada hasil.
+- [x] Form mencegah pemuatan ulang halaman dan menyediakan pesan error per field.
+- [x] README memuat deklarasi penggunaan AI untuk Pertemuan 9 di bawah.
+- [ ] Bukti lebih dari satu commit P9 dengan pesan yang menjelaskan isi perubahan belum tersedia di catatan ini; nomor atau pesan commit tidak ditambahkan.
 
-`trim()` menghapus spasi di awal dan akhir nilai, sehingga teks yang hanya berisi spasi dianggap kosong. Kolom durasi juga memiliki `min="1"` dan `max="300"` di HTML. JavaScript khusus memeriksa rentang angka, tetapi tidak secara eksplisit memastikan bahwa nilainya bilangan bulat.
+**Exit ticket**
 
-`validateField()` menetapkan `aria-invalid="true"` dan menampilkan elemen pesan galat kolom ketika kolom tidak valid. Saat kolom menjadi valid, fungsi menghapus `aria-invalid` dan menyembunyikan pesannya. `validateForm()` memeriksa ketiga kolom dan menonaktifkan tombol submit kecuali semua kolom valid. Fungsi ini dijalankan saat halaman diinisialisasi dan ketika terjadi event `input` pada form. Dalam implementasi saat ini, validasi awal juga menampilkan pesan galat untuk kolom yang masih kosong.
+- Selector project list adalah `document.querySelector("#list")`, yang disimpan dalam variabel `container` di `js/dom.js`.
+- `querySelector()` mengembalikan satu elemen pertama yang cocok, sedangkan `querySelectorAll()` mengembalikan NodeList dari semua elemen yang cocok. `Array.from()` diperlukan ketika ingin menggunakan metode array seperti `map()` pada NodeList.
+- Event delegation memungkinkan satu listener pada parent menangani interaksi tombol-tombol anak. `event.target.closest("button")` menemukan tombol terkait dari target klik.
+- Jika `container.textContent = ""` dihapus dari `render()`, kartu dari render sebelumnya tidak dibersihkan dan dapat tetap tampil atau terduplikasi ketika hasil baru ditambahkan.
+- `createElement()` dan `textContent` membuat struktur elemen dan memasukkan teks sebagai teks, bukan menafsirkannya sebagai HTML seperti `innerHTML`; ini lebih aman untuk konten yang tidak tepercaya.
 
-Saat submit, penangan event memanggil `event.preventDefault()` untuk menghentikan pengiriman form bawaan browser dan perpindahan atau pemuatan ulang halaman. Jika validasi gagal, fokus dipindahkan ke kolom pertama yang ditandai tidak valid. Penangan ini tidak menyimpan atau mengirim nilai yang valid ke tempat lain.
+**Refleksi**
 
-Pemeriksaan browser yang disarankan dalam lembar kerja:
+Catatan refleksi worksheet menyebut masalah sering muncul ketika penyebab kesalahan diasumsikan tanpa memeriksa kode, selector, dan path file secara teliti. Bagian tersulit adalah debugging validasi form dan memastikan pesan error muncul serta menghilang pada waktu yang tepat. Target pembelajaran berikutnya adalah memperdalam manipulasi DOM, event delegation, dan penulisan JavaScript yang lebih bersih serta aman.
 
-1. Submit form saat semua kolom kosong, lalu periksa pesan galat dan perilaku fokus.
-2. Isi setiap kolom dan pastikan pesan galatnya hilang setelah nilainya valid.
-3. Masukkan hanya spasi pada kolom jenis latihan dan pastikan nilainya dianggap tidak valid.
-4. Coba durasi di bawah 1, di atas 300, dan di dalam rentang yang diizinkan.
-5. Pastikan tombol submit tetap nonaktif sampai semua kolom valid.
-6. Submit form yang valid dan pastikan halaman tidak dimuat ulang. Periksa juga secara terpisah bahwa belum ada fitur penyimpanan data.
+**Self-assessment: 89/100**
 
-Interaksi ini belum diuji di browser dalam pembaruan dokumentasi ini; catat hasil yang benar-benar diamati setelah pemeriksaan dilakukan.
+| Aspek | Nilai |
+|---|---:|
+| Selecting and filling elements | 18/20 |
+| Rendering from data | 23/25 |
+| Events and event delegation | 23/25 |
+| Form validation | 18/20 |
+| Code hygiene, AI disclosure, and evidence | 7/10 |
+| **Total** | **89/100** |
 
-### Lembar E — Pemecahan masalah dan DevTools
+Referensi bukti yang tersedia: `js/dom.js`, `js/app.js`, `worksheet-p9/README.md`, `profil.html`, dan file CSS proyek. Riwayat commit disebut sebagai referensi bukti pada worksheet, tetapi detail commit P9 tidak tersedia di catatan ini. Lokasi screenshot tidak dicatat.
 
-Lembar kerja P9 dan tabel pemecahan masalah E.4 yang telah diisi tidak tersedia di ruang kerja yang diperiksa. Karena itu, masalah yang benar-benar diamati maupun akar penyebab yang telah diverifikasi tidak dapat dilaporkan di sini. Jangan anggap contoh di bawah sebagai kejadian yang benar-benar terjadi; gunakan tabel untuk menyalin pengamatan sebenarnya dari lembar kerja E.4 dan pertahankan ketidakpastian jika penyebabnya belum dipastikan.
+### Deklarasi penggunaan AI — Pertemuan 9
 
-| Pengamatan sebenarnya dari E.4 | Bukti / cara mereproduksi | Status akar penyebab |
-| --- | --- | --- |
-| Isi berdasarkan catatan lembar kerja E.4 mahasiswa. Tidak ada kejadian yang dapat diverifikasi dari berkas yang tersedia. | Isi berdasarkan catatan mahasiswa atau bukti dari browser. | Belum diverifikasi sampai diselidiki. |
-
-Saat melakukan debugging halaman, periksa apakah selector menghasilkan `null`, apakah skrip berjalan setelah HTML terkait tersedia, apakah listener filter terpasang pada elemen induk yang benar, apakah render berulang menggandakan kartu, dan apakah keadaan kosong sesuai dengan data terpilih. Gunakan panel **Console**, **Elements**, dan **Event Listeners** di Chrome DevTools untuk memeriksa elemen, galat, dan listener yang terdaftar.
-
-Di Console Chrome DevTools, `monitorEvents()` dapat membantu mengamati event pada elemen, sedangkan `unmonitorEvents()` menghentikan pemantauan tersebut. Contoh:
-
-```js
-const filterElement = document.querySelector("#filter");
-monitorEvents(filterElement, "click");
-unmonitorEvents(filterElement, "click");
-```
-
-Perintah tersebut digunakan untuk debugging dan bukan bagian dari kode proyek saat ini.
-
-### Lembar F.1 — Daftar periksa pengujian
-
-Butir yang dicentang di bawah didukung oleh pemeriksaan berkas dalam repositori ini. Butir yang belum dicentang masih memerlukan verifikasi saat dijalankan, pemeriksaan pribadi, atau pemeriksaan repositori jarak jauh sesuai keterangannya.
-
-- [x] Berkas sumber P9 yang diperlukan tersedia di `worksheet-p9/`.
-- [ ] Buka halaman di browser dan pastikan tidak ada galat JavaScript di Console.
-- [x] Selector yang digunakan di `js/dom.js` sesuai dengan elemen dan pesan galat di `profil.html`.
-- [x] Kartu proyek dibuat dari `daftarProyek` di `js/app.js`.
-- [x] `render()` mengosongkan kontainer daftar sebelum merender.
-- [x] Klik filter kategori ditangani oleh satu listener pada elemen induk `#filter`.
-- [x] `render()` memiliki logika untuk menampilkan pesan keadaan kosong saat daftar terpilih tidak berisi data.
-- [x] Penangan submit form memanggil `preventDefault()`.
-- [x] Setiap kolom form memiliki pesan galat tersendiri di HTML dan validasi terkait di JavaScript.
-- [x] Tombol submit dinonaktifkan kecuali ketiga kolom lolos pemeriksaan `validateForm()`.
-- [ ] Jalankan pengujian form dari lembar kerja (submit kosong, input yang hanya berisi spasi, memperbaiki kolom tidak valid, batas durasi, dan perilaku tombol submit), lalu catat hasil sebenarnya.
-- [ ] Tinjau dan sesuaikan pengungkapan penggunaan AI agar menggambarkan kontribusi setiap pihak dengan akurat.
-- [ ] Pastikan proyek berada di repositori GitHub yang benar, lalu verifikasi bahwa berkas P9 sudah di-commit dan di-push.
-- [ ] Tambahkan tiga tangkapan layar yang diminta Lembar E setelah mengambilnya; belum ada tangkapan layar tersebut di folder `worksheet-p9/` yang diperiksa.
-
-### Lembar F — Tiket keluar
-
-1. **Elemen, selector, dan variabel:** Daftar proyek adalah elemen `<ul id="list">` di `profil.html`. `document.querySelector("#list")` memilihnya, dan `const container` menyimpan elemen hasil tersebut di `js/dom.js`.
-2. **`querySelector()` dan `querySelectorAll()`:** `querySelector()` mengembalikan elemen pertama yang cocok atau `null`. `querySelectorAll()` mengembalikan `NodeList` yang berisi semua elemen cocok. `NodeList` bukan Array dan tidak menyediakan `Array.prototype.map()` secara langsung; gunakan `Array.from(nodeList).map(...)` untuk mengubahnya menjadi Array terlebih dahulu. Kode P9 saat ini menggunakan `querySelector()`, bukan `querySelectorAll()`.
-3. **Event delegation:** Event delegation menggunakan satu listener pada elemen induk bersama untuk menangani event dari kontrol turunannya. Di `js/dom.js`, listener pada `filterRow` memanggil `event.target.closest("button")` untuk mengenali tombol filter yang diklik.
-4. **Menghapus baris pengosongan kontainer:** Jika `container.textContent = ""` dihapus dari `render()`, setiap tindakan filter akan menambahkan kartu baru tanpa menghapus kartu sebelumnya. Akibatnya, hasil lama dapat tertinggal atau kartu menjadi terduplikasi.
-5. **Penyisipan teks yang aman:** `innerHTML` mengurai input sebagai markup dan dapat menimbulkan risiko XSS jika nilainya tidak tepercaya. Sebaliknya, `buildCard()` membuat elemen `<li>` dengan `createElement()` dan memasukkan `proyek.judul` sebagai teks biasa melalui `textContent`.
-
-### Lembar F.2 — Refleksi pembelajaran
-
-Memeriksa selector terhadap HTML membantu mencegah nilai `null` dan kegagalan pada bagian skrip berikutnya. Mengosongkan kontainer sebelum rendering menjaga daftar yang ditampilkan agar sesuai dengan data terbaru. Event delegation memungkinkan satu elemen induk menangani klik pada tombol filter tanpa memasang listener berulang kali. Validasi form memberikan umpan balik yang berguna dan membantu pengguna memperbaiki nilai yang kosong atau di luar rentang sebelum submit.
-
-### Lembar F.3 — Penilaian mandiri dan bukti
-
-Perkiraan nilai pada lembar kerja harus diisi sendiri oleh mahasiswa dengan jujur. README ini tidak menetapkan nilai mahasiswa.
-
-| Komponen penilaian lembar kerja | Bukti yang dapat diperiksa | Perkiraan nilai mahasiswa |
-| --- | --- | ---: |
-| Memilih dan mengisi elemen — 20 poin | Selector dan referensi elemen di `js/dom.js` yang dicocokkan dengan ID dan elemen form di `profil.html`. | ____ / 20 |
-| Rendering dari data — 25 poin | `daftarProyek` di `js/app.js`; `buildCard()` dan `render()` di `js/dom.js`. | ____ / 25 |
-| Event dan event delegation — 25 poin | Listener klik yang didelegasikan, `closest("button")`, `dataset.category`, dan `filter()` di `js/dom.js`. | ____ / 25 |
-| Validasi form — 20 poin | Markup kolom dan pesan galat di `profil.html`; `validateField()`, `validateForm()`, dan listener form di `js/dom.js`. | ____ / 20 |
-| Kerapian kode, pengungkapan AI, dan bukti — 10 poin | Berkas sumber, README ini, pengungkapan yang akurat, catatan pengujian, dan tangkapan layar yang diminta. | ____ / 10 |
-
-### Pengungkapan penggunaan AI untuk Pertemuan 9
-
-Bantuan AI digunakan dalam tugas ini untuk menyusun dan membuat draf README P9 berdasarkan persyaratan lembar kerja yang diberikan serta berkas proyek yang diperiksa di repositori. Pembaruan dokumentasi ini tidak membuktikan siapa yang menulis, menguji, atau mengambil keputusan implementasi untuk kode aplikasi yang sudah ada. Sebelum mengumpulkan tugas, mahasiswa perlu menyunting pengungkapan ini agar menggambarkan kontribusinya sendiri dan bantuan AI lain secara akurat. Jangan mengklaim karya dibuat sepenuhnya mandiri jika terdapat bantuan AI.
-
-### Tangkapan layar dan pengingat pengumpulan
-
-Lembar E meminta tiga tangkapan layar berikut:
-
-1. Halaman dalam keadaan bermasalah dengan panel **Event Listeners** terbuka.
-2. Halaman setelah masalah diperbaiki.
-3. Halaman saat filter kategori berfungsi.
-
-Catatan lembar kerja E.4 dan tangkapan layar bukti P9 tidak tersedia untuk diverifikasi di folder yang diperiksa. Ambil dan tambahkan tangkapan layar yang diminta setelah mereproduksi serta mencatat keadaan yang benar-benar terjadi; jangan menyebut tangkapan layar sebagai bukti perbaikan sebelum hasilnya diperiksa.
-
-Sebelum mengumpulkan tugas, pastikan seluruh folder `worksheet-p9/` berada di repositori GitHub yang sudah digunakan untuk praktikum PABW, lakukan commit dan push atas perubahan yang dimaksud, lalu periksa halaman repositori GitHub. Pembaruan README ini saja tidak memverifikasi URL remote, commit, push, atau keberadaan berkas di GitHub.
-
-### Ringkasan konsep P9
-
-| Konsep | Peran dalam proyek ini |
-| --- | --- |
-| Selector DOM | Memilih daftar, filter, pesan keadaan kosong, form, dan input dari JavaScript. |
-| `NodeList` | Jenis koleksi yang dikembalikan `querySelectorAll()`; bukan Array, sehingga perlu diubah dengan `Array.from()` sebelum memakai metode khusus Array seperti `map()`. |
-| `Array.from()` | Mengubah koleksi iterable atau menyerupai array, seperti `NodeList`, menjadi Array. Konsep ini dibahas untuk tiket keluar, tetapi tidak digunakan pada implementasi P9 saat ini. |
-| `createElement()` | Membuat elemen `<li>` untuk kartu proyek. |
-| `textContent` | Mengisi judul proyek sebagai teks biasa dan mengosongkan daftar sebelum rendering. |
-| `append()` | Menambahkan item proyek yang dibuat ke kontainer daftar. |
-| `addEventListener()` | Mendaftarkan penangan klik filter serta penangan input dan submit form. |
-| Event delegation | Memungkinkan elemen induk `#filter` menangani klik tombol-tombol turunannya dengan satu listener klik. |
-| `event.target.closest()` | Menemukan tombol yang memuat elemen yang diklik. |
-| `dataset` | Membaca nilai `data-category` tombol terpilih melalui `button.dataset.category`. |
-| `preventDefault()` | Menghentikan navigasi submit bawaan form saat validasi khusus dijalankan. |
-| `trim()` | Menghapus spasi di awal dan akhir agar input jenis latihan yang hanya berisi spasi ditolak. |
-| Validasi form | Memeriksa ketiga kolom, menampilkan pesan galat, memperbarui `aria-invalid`, mengatur tombol submit, dan memindahkan fokus ke kolom tidak valid saat submit. |
+Rincian kontribusi AI dan bagian yang dikerjakan atau diverifikasi sendiri oleh mahasiswa untuk Pertemuan 9 belum tersedia. Lengkapi deklarasi ini dengan menyebutkan bantuan AI yang benar-benar digunakan dan bagian yang dikerjakan atau diperiksa sendiri; tidak ada pembagian kontribusi spesifik yang diklaim di sini.
